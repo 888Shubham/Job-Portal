@@ -60,3 +60,9 @@ The Job Portal Website is built with an MVC (Model View Controller) architecture
 -Feel free to contribute! Fork the repository and submit a pull request.
 
 ## Screenshots
+![Screenshot 1](images/Screenshot1.png)
+![Screenshot 1](images/Screenshot2.png)
+![Screenshot 1](images/Screenshot3.png)
+![Screenshot 1](images/Screenshot4.png)
+![Screenshot 1](images/Screenshot5.png)
+![Screenshot 1](images/Screenshot6.png)
