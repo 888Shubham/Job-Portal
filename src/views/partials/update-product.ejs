@@ -1,0 +1,53 @@
+<%- include('./head') %>
+<%- include('./nav') %>
+<%if(locals.lastVisit){%>
+    <div class ="alert alert-primary" role="alert">
+      your last Visit was on :   <%=locals.lastVisit%>
+    </div>
+    <%}%>
+
+<h1 class="mt-5 mb-4 header">Update Product</h1>
+
+<form action="/update-product" method="post">
+    <input type="hidden" class="form-control" id="id" name="id" value="<%= product.id %>">
+    
+    <div class="mb-3">
+        <label for="name" class="form-label">Company Name</label>
+        <input type="text" class="form-control" id="name" name="name" value="<%= product.name %>">
+    </div>
+    
+    <div class="mb-3">
+        <label for="tech" class="form-label">Technology</label>
+        <input type="text" class="form-control" id="tech" name="tech" value="<%= product.tech %>">
+    </div>
+    
+    <div class="mb-3">
+        <label for="location" class="form-label">Company Location</label>
+        <input type="text" class="form-control" id="location" name="location" value="<%= product.location %>">
+    </div>
+    
+    <div class="mb-3">
+        <label for="LPA" class="form-label">LPA</label>
+        <input type="text" class="form-control" id="LPA" name="LPA" value="<%= product.LPA %>">
+    </div>
+    
+   
+    <div class="col-md-6">
+        <label for="skills" class="form-label">Skills</label>
+        <ul>
+            <% product.skills.forEach(skill => { %>
+                <li><%= skill %></li>
+            <% }); %>
+        </ul>
+    </div>
+    <div class="col-md-6 mt-3">
+        <textarea class="form-control" id="updatedSkills" name="updatedSkills" rows="4">
+            <%= product.skills.join(', ') %>
+        </textarea>            <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+    </div>
+    
+    <!-- <button id="updateSkillsBtn" class="btn btn-primary">Update Product</button> -->
+    <button type="submit" class="btn btn-primary mt-3">Update Product</button>
+</form>
+
+<%- include('./scripts') %>
